@@ -110,7 +110,7 @@ public class menuControladores implements ActionListener{
                 this.AgregarModel.ListaReparaciones.get(0).getFechaR(),
                 this.AgregarModel.ListaReparaciones.get(0).getTecnico()});
         }
-        if(e.getSource()==this.VistaEntrega.btnEntregar){
+        if(e.getSource()==this.VistaMenu.btnEntrega){
             
             this.VistaEntrega.btnEntregar.addActionListener(this);
             

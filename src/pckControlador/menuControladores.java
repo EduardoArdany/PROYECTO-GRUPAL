@@ -44,7 +44,7 @@ public class menuControladores implements ActionListener{
         
         
         //Levantar la vista principal
-        this.VistaMenu.setExtendedState(Interfaz.MAXIMIZED_BOTH);
+        this.VistaMenu.setSize(826, 701);
         this.VistaMenu.setVisible(true);
         
         this.TablaEquipos.addColumn("MARCA");

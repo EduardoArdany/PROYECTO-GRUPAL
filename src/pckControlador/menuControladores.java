@@ -43,7 +43,7 @@ public class menuControladores implements ActionListener{
         
         
         
-        //Levantar la vista principal
+        //Levantar la vista principal, con la tabla de equipos
         this.VistaMenu.setSize(826, 701);
         this.VistaMenu.setVisible(true);
         
@@ -54,11 +54,34 @@ public class menuControladores implements ActionListener{
         
         this.VistaEquipos.tblEquipos.setModel(TablaEquipos);
         
+        //Levantar la tabla de Propietarios        
+        this.TablaPropietarios.addColumn("APELLIDOS");
+        this.TablaPropietarios.addColumn("NOMBRE");
+        this.TablaPropietarios.addColumn("TELEFONO");
+        
+        this.VistaPropietarios.tblPropietarios.setModel(TablaPropietarios);
+        
+        //Levantar la tabla de Reparacion
+        this.TablaReparacion.addColumn("CODIGO");
+        this.TablaReparacion.addColumn("DESCRIPCION");
+        this.TablaReparacion.addColumn("TECNICO");
+        this.TablaReparacion.addColumn("FECHA");
+        
+        this.VistaReparacion.tblReparacion.setModel(TablaReparacion);
+        
+        //Levantar la tabla de Entrega
+        this.TablaEntrega.addColumn("CODIGO EQUIPO");
+        this.TablaEntrega.addColumn("NOMBRE");
+        this.TablaEntrega.addColumn("FECHA ENTREGA");
+        this.TablaEntrega.addColumn("DESCRIPCION");
+        
+        this.VistaEntrega.tblEntrega.setModel(TablaEntrega);
+        
     }
     
     
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e){
         //Llevar del fomulario menu al de equipos
         if(e.getSource()==this.VistaMenu.btnIngresoEquipo){
             
@@ -67,7 +90,7 @@ public class menuControladores implements ActionListener{
             //LEVANTAR LA VISTA USUARIOS
             this.VistaEquipos.setLocationRelativeTo(null);
             this.VistaEquipos.setVisible(true);
-        }
+    }
         if(e.getSource()==this.VistaEquipos.btnIngresar){
             this.AgregarModel.IngresarEquipos(this.VistaEquipos.txtMarca.getText(),
                     this.VistaEquipos.txtModelo.getText(),
@@ -78,6 +101,7 @@ public class menuControladores implements ActionListener{
             this.AgregarModel.ListaEquipos.get(0).getTipo(),
             this.AgregarModel.ListaEquipos.get(0).getProblema()});
         }
+        
         if(e.getSource()==this.VistaMenu.btnRegistroPropietario){
             
             this.VistaPropietarios.btnPropietario.addActionListener(this);
@@ -85,6 +109,7 @@ public class menuControladores implements ActionListener{
             this.VistaPropietarios.setLocationRelativeTo(null);
             this.VistaPropietarios.setVisible(true);
         }
+        
         if(e.getSource()==this.VistaPropietarios.btnPropietario){
             this.AgregarModel.IngresarPropietarios(this.VistaPropietarios.txtApellidos.getText(),
                     this.VistaPropietarios.txtNombre.getText(),
@@ -92,7 +117,8 @@ public class menuControladores implements ActionListener{
             this.TablaPropietarios.addRow(new Object[]{this.AgregarModel.ListaPropietarios.get(0).getApellidosP(),
             this.AgregarModel.ListaPropietarios.get(0).getNombreP(),
             this.AgregarModel.ListaPropietarios.get(0).getTelefono()});
-        }          
+        }
+                  
         if(e.getSource()==this.VistaMenu.btnReparacion){
             
             this.VistaReparacion.btnReparacion.addActionListener(this);
@@ -100,33 +126,36 @@ public class menuControladores implements ActionListener{
             this.VistaReparacion.setLocationRelativeTo(null);
             this.VistaReparacion.setVisible(true);
         }
+        
         if(e.getSource()==this.VistaReparacion.btnReparacion){
             this.AgregarModel.IngresarReparaciones(this.VistaReparacion.txtCodigo.getText(),
                     this.VistaReparacion.txtDescripcion.getText(),
                     this.VistaReparacion.txtFecha.getText(),
                     this.VistaReparacion.txtTecnico.getText());
+            
             this.TablaReparacion.addRow(new Object[]{this.AgregarModel.ListaReparaciones.get(0).getCodigoR(),
                 this.AgregarModel.ListaReparaciones.get(0).getDescripcionR(),
                 this.AgregarModel.ListaReparaciones.get(0).getFechaR(),
                 this.AgregarModel.ListaReparaciones.get(0).getTecnico()});
-        }
+         }
+        
         if(e.getSource()==this.VistaMenu.btnEntrega){
             
             this.VistaEntrega.btnEntregar.addActionListener(this);
             
             this.VistaEntrega.setLocationRelativeTo(null);
-            this.VistaEntrega.setVisible(true);
+            this.VistaEntrega.setVisible(true);   
         }
+        
         if(e.getSource()==this.VistaEntrega.btnEntregar){
-            this.AgregarModel.IngresarEntregas(this.VistaReparacion.txtCodigo.getText(),
-                    this.VistaReparacion.txtDescripcion.getText(),
-                    this.VistaReparacion.txtFecha.getText(),
-                    this.VistaReparacion.txtTecnico.getText());
+            this.AgregarModel.IngresarEntregas(this.VistaEntrega.txtDescripcionS.getText(),
+                    this.VistaEntrega.txtEquipo.getText(),
+                    this.VistaEntrega.txtFechaE.getText(),
+                    this.VistaEntrega.txtNombreP.getText());
             this.TablaEntrega.addRow(new Object[]{this.AgregarModel.ListaEntregas.get(0).getCodigo(),
                 this.AgregarModel.ListaEntregas.get(0).getDescripcion(),
                 this.AgregarModel.ListaEntregas.get(0).getFecha(),
                 this.AgregarModel.ListaEntregas.get(0).getNombre()});
         }
-    }    
+    }
 }
-//

@@ -41,30 +41,24 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnReparacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MREPARACIONES.png"))); // NOI18N
-
-        btnEntrega.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MENTREGAS.png"))); // NOI18N
-
-        btnIngresoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MINGRESAREQUIPO.png"))); // NOI18N
-
-        btnRegistroPropietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MPROPIETARIOS.png"))); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MPROPIETARIOS.png"))); // NOI18N
         jLabel1.setText("Ingreso de Propietarios");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MENTREGAS.png"))); // NOI18N
         jLabel2.setText("Entregas");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MINGRESAREQUIPO.png"))); // NOI18N
         jLabel3.setText("Ingreso de Equipos");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/MREPARACIONES.png"))); // NOI18N
         jLabel4.setText("Reparaciones");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel5.setText("MENÚ PRINCIPAL");
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pckImagenes/LOGOGOD.jpg"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Kristen ITC", 2, 24)); // NOI18N
         jLabel6.setText("Machete reparations");
@@ -96,9 +90,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(57, 57, 57))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnReparacion)
-                            .addComponent(btnEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                            .addComponent(btnReparacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -143,10 +137,10 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addComponent(btnEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnReparacion)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel4))))
+                                .addComponent(jLabel4))
+                            .addComponent(btnReparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(jButton1)
@@ -154,7 +148,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
